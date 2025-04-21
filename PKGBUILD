@@ -1,5 +1,5 @@
 pkgname=topaz-videoai-beta
-pkgver=5.0.3.1.b
+pkgver=5.0.3.1
 pkgrel=1
 pkgdesc="Video processing tool providing state-of-the-art AI filters for FFmpeg"
 arch=('x86_64')
@@ -8,7 +8,7 @@ license=('LicenseRef-TopazLabs-VideoAI')
 depends=('vulkan-driver' 'glibc' 'libxcb' 'xcb-util-cursor' 'gstreamer' 'gst-plugins-base-libs' 'gst-plugins-bad-libs'
 	'gst-plugins-base' 'gst-plugins-good' 'gst-plugins-bad' 'gst-plugins-ugly' 'gst-libav' 'gst-plugin-gtk'
 	'gst-plugin-qmlgl' 'libunwind' 'gtk2' 'inter-font')
-source=("$pkgname-$pkgver.deb::https://downloads.topazlabs.com/deploy/TopazVideoAIBeta/${pkgver}/TopazVideoAIBeta_${pkgver}_amd64.deb"
+source=("$pkgname-$pkgver.deb::https://downloads.topazlabs.com/deploy/TopazVideoAIBeta/${pkgver}.b/TopazVideoAIBeta_${pkgver}.b_amd64.deb"
 	"EULA.pdf::https://downloads.topazlabs.com/web-assets/Topaz%20-%20EULA%20%28FL%202.05.25%29.pdf"
 	README
 	TopazVideoAIBETA.desktop
