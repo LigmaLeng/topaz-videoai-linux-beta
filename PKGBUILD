@@ -15,7 +15,7 @@ sha256sums=('258627001c685aa9feed34a013b48003456f5fc5239151d6a5d5440b51fc795e'
 noextract=("$pkgname-$pkgver.deb")
 
 package() {
-	bsdtar -O -xf "${pkgname}_${pkgver}.deb" 'data.tar*' | bsdtar -C "${pkgdir}" -xf - opt
+	bsdtar -O -xf "${pkgname}-${pkgver}.deb" 'data.tar*' | bsdtar -C "${pkgdir}" -xf - opt
 	install -Dm644 EULA.pdf "${pkgdir}/usr/share/licenses/${pkgname}/EULA.pdf"
 	install -Dm644 "${srcdir}"/README "${pkgdir}/usr/share/licenses/${pkgname}/README"
 	install -Dm755 "${srcdir}/videoaiBETA-login" "${pkgdir}/usr/local/bin/videoaiBETA-login"
