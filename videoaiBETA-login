@@ -1,0 +1,8 @@
+#!/bin/bash
+
+export LD_LIBRARY_PATH=/opt/TopazVideoAIBETA/lib:${LD_LIBRARY_PATH}
+export TVAI_MODEL_DATA_DIR=${XDG_DATA_HOME:-$HOME/.local/share}/tvai
+export TVAI_MODEL_DIR=${XDG_DATA_HOME:-$HOME/.local/share}/tvai
+[[ -d $TVAI_MODEL_DIR ]] || { mkdir -p $TVAI_MODEL_DIR; cp /opt/TopazVideoAIBETA/models/* $TVAI_MODEL_DIR; }
+
+/opt/TopazVideoAIBETA/bin/login $@

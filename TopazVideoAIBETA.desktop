@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Topaz Video AI BETA
+Comment=Topaz Video AI
+Exec=env "LD_LIBRARY_PATH=/opt/TopazVideoAIBETA/lib:/opt/TopazVideoAIBETA/bin:\\${LD_LIBRARY_PATH}" "/opt/TopazVideoAIBETA/bin/Topaz Video AI BETA"
+Icon=/opt/TopazVideoAIBETA/icon_BETA.png
+Terminal=false
+Type=Application
+Categories=AudioVideo;Video;AudioVideoEditing;Qt
