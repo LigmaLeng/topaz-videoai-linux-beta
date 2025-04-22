@@ -5,9 +5,6 @@ pkgdesc="Video processing tool providing state-of-the-art AI filters for FFmpeg"
 arch=('x86_64')
 url="https://www.topazlabs.com"
 license=('LicenseRef-TopazLabs-VideoAI')
-depends=('vulkan-driver' 'glibc' 'libxcb' 'xcb-util-cursor' 'gstreamer' 'gst-plugins-base-libs' 'gst-plugins-bad-libs'
-	'gst-plugins-base' 'gst-plugins-good' 'gst-plugins-bad' 'gst-plugins-ugly' 'gst-libav' 'gst-plugin-gtk'
-	'gst-plugin-qmlgl' 'libunwind' 'gtk2' 'inter-font')
 source=("$pkgname-$pkgver.deb::https://downloads.topazlabs.com/deploy/TopazVideoAIBeta/${pkgver}.b/TopazVideoAIBeta_${pkgver}.b_amd64.deb"
 	"EULA.pdf::https://downloads.topazlabs.com/web-assets/Topaz%20-%20EULA%20%28FL%202.05.25%29.pdf"
 	README
@@ -23,6 +20,9 @@ sha256sums=('258627001c685aa9feed34a013b48003456f5fc5239151d6a5d5440b51fc795e'
 noextract=("$pkgname-$pkgver.deb")
 
 package() {
+	depends=('vulkan-driver' 'glibc' 'libxcb' 'xcb-util-cursor' 'gstreamer' 'gst-plugins-base-libs' 'gst-plugins-bad-libs'
+		'gst-plugins-base' 'gst-plugins-good' 'gst-plugins-bad' 'gst-plugins-ugly' 'gst-libav' 'gst-plugin-gtk'
+		'gst-plugin-qmlgl' 'libunwind' 'gtk2' 'inter-font')
 	bsdtar -O -xf "${pkgname}-${pkgver}.deb" 'data.tar*' | bsdtar -C "${pkgdir}" -xf - opt
 	install -Dm644 EULA.pdf "${pkgdir}/usr/share/licenses/${pkgname}/EULA.pdf"
 	install -Dm644 "${srcdir}"/README "${pkgdir}/usr/share/licenses/${pkgname}/README"
